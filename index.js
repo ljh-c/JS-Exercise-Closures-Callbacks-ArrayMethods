@@ -222,9 +222,7 @@ function firstNamesAllCaps(runners) {
 function getRunnersByTShirtSize(runners, tShirtSize) {
   return runners.filter(runnerObj => runnerObj.shirt_size === tShirtSize);
 }
-// const result = friends.filter(element => {
-//   return element['gender'] === 'F';
-// });
+
 /**
  * ### Challenge `tallyUpDonations`
  * 
@@ -235,10 +233,16 @@ function getRunnersByTShirtSize(runners, tShirtSize) {
  * @param runners array of runners like the one inside the /data/runners.js file.
  * @returns a number which is the sum of the donations by all runners.
 */
-function tallyUpDonations(/* CODE HERE */) {
-  /* CODE HERE */
+function tallyUpDonations(runners) {
+  return runners.reduce((sum, runnerObj) => {
+    return sum + runnerObj.donation;
+  }, 0);
 }
-
+// function processSum(numberList, callback) {
+//   return callback(numberList.reduce( (sum, current) => {
+//     return sum + current;
+//   }, 0 ));
+// }
 /////////////// CLOSURES ///////////////
 /////////////// CLOSURES ///////////////
 
