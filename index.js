@@ -238,11 +238,7 @@ function tallyUpDonations(runners) {
     return sum + runnerObj.donation;
   }, 0);
 }
-// function processSum(numberList, callback) {
-//   return callback(numberList.reduce( (sum, current) => {
-//     return sum + current;
-//   }, 0 ));
-// }
+
 /////////////// CLOSURES ///////////////
 /////////////// CLOSURES ///////////////
 
