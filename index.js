@@ -136,8 +136,12 @@ function processProduct(num1, num2, callback) {
  * should return "sad".
 */
 function processContains(item, list, callback) {
-  return callback(list.includes(item));
+  let newArr = list.filter(element => element === item);
+  return callback(newArr.length > 0);
 }
+
+// see below on implementation with .includes()
+// return callback(list.includes(item));
 
 /**
  * ### Challenge `processDuplicateFree`
@@ -186,9 +190,12 @@ function processDuplicateFree(list, callback) {
  * The full names appear in the array in the same order the runners appear in the `runners` array.
 */
 function getFullNames(runners) {
-  let runnerArr = runners.map(runnerObj => `${runnerObj.last_name}, ${runnerObj.first_name}`);
+  let runnerArr = [];
+  runners.forEach(runnerObj => runnerArr.push(`${runnerObj.last_name}, ${runnerObj.first_name}`));
   return runnerArr;
 }
+// see below on implementation with .map()
+// let runnerArr = runners.map(runnerObj => `${runnerObj.last_name}, ${runnerObj.first_name}`);
 
 /**
  * ### Challenge `firstNamesAllCaps`
